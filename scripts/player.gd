@@ -14,10 +14,15 @@ func _process(delta: float) -> void:
 		_animated_sprite.play("run")
 	else:
 		_animated_sprite.stop()
+		_animated_sprite.set_frame_and_progress(2, 0.0)
+
 
 func _physics_process(delta):
 	# gravity - pull me down
 	if !is_on_floor():
+		_animated_sprite.stop()
+		_animated_sprite.set_frame_and_progress(0, 0.0)
+
 		velocity.y += gravity
 		if velocity.y > 1000:
 			velocity.y = 1000
