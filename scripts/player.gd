@@ -7,7 +7,7 @@ var isInFirstJump = false
 
 @onready var _animated_sprite = $AnimationPlayer
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_pressed("move_right"):
 		_animated_sprite.play("walk")
 	elif Input.is_action_pressed("move_left"):
@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 		_animated_sprite.stop()
 
 
-func _physics_process(delta):
+func _physics_process(_delta: float):
 	# gravity - pull me down
 	if !is_on_floor():
 		_animated_sprite.stop()
