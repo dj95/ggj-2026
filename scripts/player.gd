@@ -34,7 +34,7 @@ func _physics_process(delta):
 	# flip animation and charactor when walking left and right
 	if velocity.x < 0:
 		_animated_sprite.flip_h = true
-	else:
+	elif velocity.x > 0:
 		_animated_sprite.flip_h = false
 	
 	move_and_slide()
