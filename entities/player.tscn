@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://3vqeypmxh3su"]
 
-[ext_resource type="Texture2D" uid="uid://brghiiw2e8ian" path="res://icon.svg" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://bkbae1cqciv3f" path="res://scripts/player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://j4rsvi25kv4a" path="res://assets/2d_animation_player-run.webp" id="2_tjdhl"]
 [ext_resource type="Texture2D" uid="uid://bgc5lmphlhf45" path="res://assets/2d_sprite_animation_assets/run_animation/run-1.png" id="3_tjdhl"]
 [ext_resource type="Texture2D" uid="uid://bvx3wlacwe48w" path="res://assets/2d_sprite_animation_assets/run_animation/run-2.png" id="4_x08pd"]
 [ext_resource type="Texture2D" uid="uid://b521xg07y7rou" path="res://assets/2d_sprite_animation_assets/run_animation/run-3.png" id="5_dchgp"]
@@ -46,6 +46,53 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_x08pd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tjdhl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_dchgp"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_kdgjc"]
+resource_name = "walk"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.005555556, -0.16666667, 0, 0, 2, -0.005555556, -0.16666667, 0, 0, 3, -0.0055555566, -0.16666667, 0, 0, 4, -0.005555555, -0.16666667, 0, 0, 5, -0.005555555, -0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 0.099999994, 0.2, 0.3, 0.4, 0.5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q0i8f"]
+_data = {
+&"RESET": SubResource("Animation_dchgp"),
+&"walk": SubResource("Animation_kdgjc")
+}
+
 [node name="Player" type="CharacterBody2D" unique_id=553831703]
 script = ExtResource("1_onrkg")
 
@@ -54,14 +101,24 @@ position = Vector2(-9, 0)
 shape = SubResource("RectangleShape2D_onrkg")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=534086194]
-visible = false
-texture = ExtResource("1_4flbx")
+position = Vector2(-9.499998, -17.499992)
+scale = Vector2(4.333333, 5.21875)
+texture = ExtResource("2_tjdhl")
+hframes = 6
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1629060643]
 
 [node name="PlayerRunAnimation" type="AnimatedSprite2D" parent="." unique_id=1523642984]
+visible = false
 position = Vector2(-1.66893e-06, -0.49999905)
 scale = Vector2(1.7746478, 1.8656715)
 sprite_frames = SubResource("SpriteFrames_dp3pk")
 animation = &"run"
 frame_progress = 0.6809384
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=294112299]
+visible = false
+sprite_frames = SubResource("SpriteFrames_x08pd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1262840572]
+libraries/ = SubResource("AnimationLibrary_q0i8f")

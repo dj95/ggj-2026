@@ -5,23 +5,21 @@ extends CharacterBody2D
 @export var jump_force = 800
 var isInFirstJump = false
 
-@onready var _animated_sprite = $PlayerRunAnimation
+@onready var _animated_sprite = $AnimationPlayer
 
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("move_right"):
-		_animated_sprite.play("run")
+		_animated_sprite.play("walk")
 	elif Input.is_action_pressed("move_left"):
-		_animated_sprite.play("run")
+		_animated_sprite.play("walk")
 	else:
 		_animated_sprite.stop()
-		_animated_sprite.set_frame_and_progress(2, 0.0)
 
 
 func _physics_process(delta):
 	# gravity - pull me down
 	if !is_on_floor():
 		_animated_sprite.stop()
-		_animated_sprite.set_frame_and_progress(0, 0.0)
 
 		velocity.y += gravity
 		if velocity.y > 1000:
@@ -38,8 +36,8 @@ func _physics_process(delta):
 	
 	# flip animation and charactor when walking left and right
 	if velocity.x < 0:
-		_animated_sprite.flip_h = true
+		$Sprite2D.flip_h = true
 	elif velocity.x > 0:
-		_animated_sprite.flip_h = false
+		$Sprite2D.flip_h = false
 	
 	move_and_slide()
