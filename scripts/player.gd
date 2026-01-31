@@ -21,6 +21,11 @@ var summerAtmo = load("res://assets/audio/atmo/summer_atmoLoop.wav")
 var autumnAtmo = load("res://assets/audio/atmo/autum_atmoLoop.wav")
 var winterAtmo = load("res://assets/audio/atmo/winter_atmoLoop.wav")
 
+var springTransition = load("res://assets/audio/transition/springTransition.wav")
+var summerTransition = load("res://assets/audio/transition/summerTransition.wav")
+var autumnTransition = load("res://assets/audio/transition/autumnTransition.wav")
+var winterTransition = load("res://assets/audio/transition/winterTransition.wav")
+
 var seasonIndex = {
 	"spring": 0,
 	"summer": 1,
@@ -30,11 +35,13 @@ var seasonIndex = {
 
 var seasonMusic = [springMusic, summerMusic, autumnMusic, winterMusic]
 var seasonAtmo = [springAtmo, summerAtmo, autumnAtmo, winterAtmo]
+var seasonTransitions = [springTransition, summerTransition, autumnTransition, winterTransition]
 
 @onready var pauseScreen = $PauseScreen
 @onready var _animated_sprite = $AnimationPlayer
 @onready var backgroundMusic = %Level1BackgroundMusic
 @onready var backgroundAtmo = %Level1AtmoMusic
+@onready var backgroundTransition = %Level1TransitionMusic
 
 func _input(_event: InputEvent) -> void:
 	if !pauseScreen.visible:
@@ -130,8 +137,14 @@ func _season_changes(season):
 	current_season = season
 	#stop gliding when season changes
 	is_gliding = false
-
+	
 	var currentSeasonIndex = seasonIndex[season]
+	backgroundMusic.stop()
+	
+	backgroundTransition.stream = seasonTransitions[currentSeasonIndex]
+	backgroundTransition.play()
+	await get_tree().create_timer(2.0).timeout
+
 	backgroundMusic.stream = seasonMusic[currentSeasonIndex]
 	backgroundMusic.play()
 

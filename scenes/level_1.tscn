@@ -51,3 +51,6 @@ autoplay = true
 
 [node name="Level1AtmoMusic" type="AudioStreamPlayer" parent="." unique_id=655898625]
 unique_name_in_owner = true
+
+[node name="Level1TransitionMusic" type="AudioStreamPlayer" parent="." unique_id=986859041]
+unique_name_in_owner = true
