@@ -24,20 +24,20 @@ func _physics_process(_delta: float):
 		velocity.y += gravity
 		if velocity.y > 1000:
 			velocity.y = 1000
-	
+
 	# jump
 	if Input.is_action_just_pressed("jump") && (is_on_floor() || isInFirstJump):
 		isInFirstJump = !isInFirstJump
 		velocity.y = -jump_force
-	
+
 	# movement
 	var horizontal_direction = Input.get_axis("move_left", "move_right")
 	velocity.x = speed * horizontal_direction
-	
+
 	# flip animation and charactor when walking left and right
 	if velocity.x < 0:
 		$Sprite2D.flip_h = true
 	elif velocity.x > 0:
 		$Sprite2D.flip_h = false
-	
+
 	move_and_slide()
