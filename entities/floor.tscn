@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dj1d0butyyf21"]
 
 [ext_resource type="Texture2D" uid="uid://cewd3ocjaggvi" path="res://assets/img/grass/Grass2-Loop.png" id="1_meu4o"]
+[ext_resource type="Script" uid="uid://bdqc5ar41ie4d" path="res://scripts/floor.gd" id="1_sohpe"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ryoud"]
 
@@ -11,6 +12,7 @@ size = Vector2(1160, 20)
 size = Vector2(1000, 50)
 
 [node name="StaticBody2D" type="StaticBody2D" unique_id=1527918553]
+script = ExtResource("1_sohpe")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=484454904]
 material = SubResource("CanvasItemMaterial_ryoud")

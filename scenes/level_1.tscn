@@ -35,3 +35,11 @@ scale = Vector2(0.2, 1)
 [node name="StaticBody2D3" parent="." unique_id=1538930884 instance=ExtResource("2_rus8k")]
 position = Vector2(1666, 418)
 scale = Vector2(0.2, 1)
+
+[node name="Level1BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=861669935]
+unique_name_in_owner = true
+volume_db = -20.0
+autoplay = true
+
+[node name="Level1AtmoMusic" type="AudioStreamPlayer" parent="." unique_id=655898625]
+unique_name_in_owner = true

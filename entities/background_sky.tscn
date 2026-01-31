@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d00dem17g4e3p"]
 
 [ext_resource type="Texture2D" uid="uid://dfkksav2rold0" path="res://assets/img/sky/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 2/1.png" id="1_hqt00"]
-[ext_resource type="Script" path="res://scripts/background_sky.gd" id="1_urvvo"]
+[ext_resource type="Script" uid="uid://c8u13570aq6si" path="res://scripts/background_sky.gd" id="1_urvvo"]
 [ext_resource type="Texture2D" uid="uid://beewthesv5dcd" path="res://assets/img/sky/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 2/3.png" id="2_wg7al"]
 [ext_resource type="Texture2D" uid="uid://b3qli178i8r4k" path="res://assets/img/sky/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 2/4.png" id="3_53mht"]
 [ext_resource type="Texture2D" uid="uid://b50ky3avf6owm" path="res://assets/img/grass/Grass1-LoopA.png" id="4_wg7al"]

@@ -10,9 +10,31 @@ var max_jumps := 2
 var is_gliding := false
 
 var paused = false
-@onready var pauseScreen = $PauseScreen
 
+var springMusic = load("res://assets/audio/GGJ1-1-Frühling.mp3")
+var summerMusic = load("res://assets/audio/GGJ1-1-Sommer.mp3")
+var autumnMusic = load("res://assets/audio/GGJ1-1-Herbst.mp3")
+var winterMusic = load("res://assets/audio/GGJ1-1-Winter.mp3")
+
+var springAtmo = load("res://assets/audio/atmo/spring_atmoLoop.wav")
+var summerAtmo = load("res://assets/audio/atmo/summer_atmoLoop.wav")
+var autumnAtmo = load("res://assets/audio/atmo/autum_atmoLoop.wav")
+var winterAtmo = load("res://assets/audio/atmo/winter_atmoLoop.wav")
+
+var seasonIndex = {
+	"spring": 0,
+	"summer": 1,
+	"autumn": 2,
+	"winter": 3,
+}
+
+var seasonMusic = [springMusic, summerMusic, autumnMusic, winterMusic]
+var seasonAtmo = [springAtmo, summerAtmo, autumnAtmo, winterAtmo]
+
+@onready var pauseScreen = $PauseScreen
 @onready var _animated_sprite = $AnimationPlayer
+@onready var backgroundMusic = %Level1BackgroundMusic
+@onready var backgroundAtmo = %Level1AtmoMusic
 
 func _input(event: InputEvent) -> void:
 	if !pauseScreen.visible:
@@ -25,6 +47,11 @@ var current_season = "spring"
 
 func _ready() -> void:
 	SignalBus.connect("season_changed", Callable(self, "_season_changes"))
+	backgroundMusic.stream = springMusic
+	backgroundMusic.play()
+
+	backgroundAtmo.stream = springAtmo
+	backgroundAtmo.play()
 
 func _process(_delta: float) -> void:
 	if Input.is_action_pressed("move_right"):
@@ -52,13 +79,13 @@ func _physics_process(delta: float):
 	if Input.is_action_just_pressed("jump"):
 		# reset on floor
 		if is_on_floor():
-			jump_count = 0 
+			jump_count = 0
 
 		if jump_count == 0:
 			velocity.y = -jump_force
 			jump_count += 1
 		elif jump_count == 1:
-			
+
 			# second jump
 			if current_season == "autumn":
 				velocity.y = -jump_force
@@ -94,12 +121,19 @@ func _on_resume_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
-	
-	
+
+
 func _season_changes(season):
 	current_season = season
 	#stop gliding when season changes
 	is_gliding = false
+
+	var currentSeasonIndex = seasonIndex[season]
+	backgroundMusic.stream = seasonMusic[currentSeasonIndex]
+	backgroundMusic.play()
+
+	backgroundAtmo.stream = seasonAtmo[currentSeasonIndex]
+	backgroundAtmo.play()
 
 
 func _on_main_menu_pressed() -> void:

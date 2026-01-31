@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cv0yu4dqr6amg"]
 
 [ext_resource type="Script" uid="uid://uomwi01ptuya" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="AudioStream" uid="uid://76pf74krn4d" path="res://assets/audio/GGJ2-Menu-Loop.mp3" id="2_ekxnf"]
 
 [node name="PanelContainer" type="PanelContainer" unique_id=1914163403]
 anchors_preset = 15
@@ -32,6 +33,10 @@ text = "Play"
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Quit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1212024523]
+stream = ExtResource("2_ekxnf")
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_button_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
