@@ -16,10 +16,10 @@ modulate = Color(0.50907934, 0.5073085, 0.69926035, 1)
 material = SubResource("CanvasItemMaterial_ryoud")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1334002849]
-position = Vector2(579, 9)
+position = Vector2(580, 10)
 shape = SubResource("RectangleShape2D_ryoud")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=381089614]
-position = Vector2(581.5, 33)
+position = Vector2(584, 25)
 scale = Vector2(1.169, 1)
 mesh = SubResource("QuadMesh_ryoud")
