@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://d00dem17g4e3p"]
+
+[ext_resource type="Texture2D" uid="uid://dfkksav2rold0" path="res://assets/img/sky/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 2/1.png" id="1_hqt00"]
+[ext_resource type="Texture2D" uid="uid://beewthesv5dcd" path="res://assets/img/sky/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 2/3.png" id="2_wg7al"]
+[ext_resource type="Texture2D" uid="uid://b3qli178i8r4k" path="res://assets/img/sky/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 2/4.png" id="3_53mht"]
+
+[node name="Node2D" type="Node2D" unique_id=1162432400]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1237522723]
+texture_repeat = 2
+scroll_scale = Vector2(0.7, 1)
+repeat_size = Vector2(1920, 324)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=441189310]
+position = Vector2(961.25, 551.75)
+scale = Vector2(3.3394098, 3.3780863)
+texture = ExtResource("1_hqt00")
+
+[node name="Parallax2D3" type="Parallax2D" parent="." unique_id=564018313]
+texture_repeat = 2
+scroll_scale = Vector2(0.2, 1)
+repeat_size = Vector2(1900, 0)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3" unique_id=840044967]
+position = Vector2(958, 695)
+scale = Vector2(3.324653, 2.5138888)
+texture = ExtResource("2_wg7al")
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1487837230]
+texture_repeat = 2
+scroll_scale = Vector2(0.5, 1)
+repeat_size = Vector2(2000, 0)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" unique_id=350117856]
+position = Vector2(1003.00006, 688.99994)
+scale = Vector2(1.8819444, 2.5462964)
+texture = ExtResource("3_53mht")

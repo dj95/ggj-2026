@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://c567bx1lextou"]
 
 [ext_resource type="PackedScene" uid="uid://3vqeypmxh3su" path="res://entities/player.tscn" id="1_bswci"]
+[ext_resource type="PackedScene" uid="uid://d00dem17g4e3p" path="res://entities/background_sky.tscn" id="1_rus8k"]
 [ext_resource type="PackedScene" uid="uid://dj1d0butyyf21" path="res://entities/floor.tscn" id="2_rus8k"]
 
 [node name="level_1" type="Node2D" unique_id=2001331831]
+
+[node name="Node2D" parent="." unique_id=1162432400 instance=ExtResource("1_rus8k")]
 
 [node name="Player" parent="." unique_id=539628790 instance=ExtResource("1_bswci")]
 position = Vector2(78, 557)
@@ -22,3 +25,14 @@ scale = Vector2(0.2, 1)
 [node name="StaticBody2D3" parent="." unique_id=1538930884 instance=ExtResource("2_rus8k")]
 position = Vector2(1666, 418)
 scale = Vector2(0.2, 1)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1535618242]
+visible = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=487891635]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1333885674]
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground" unique_id=397083759]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2" unique_id=216865515]

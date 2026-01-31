@@ -107,6 +107,7 @@ texture = ExtResource("2_tjdhl")
 hframes = 6
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1629060643]
+position = Vector2(-2, -234)
 
 [node name="PlayerRunAnimation" type="AnimatedSprite2D" parent="." unique_id=1523642984]
 visible = false
