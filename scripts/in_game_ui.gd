@@ -23,14 +23,19 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
+	var season_changed = false
+	
 	if event.is_action_pressed("previous_season"):
 		currentSeason = (currentSeason - 1)%4
+		season_changed = true
 
 	if event.is_action_pressed("next_season"):
 		currentSeason = (currentSeason + 1) %4
+		season_changed = true
 
-	previousSeasonIcon.texture = seasons[(currentSeason - 1)%4]
-	currentSeasonIcon.texture = seasons[currentSeason]
-	nextSeasonIcon.texture = seasons[(currentSeason + 1)%4]
+	if season_changed:
+		previousSeasonIcon.texture = seasons[(currentSeason - 1)%4]
+		currentSeasonIcon.texture = seasons[currentSeason]
+		nextSeasonIcon.texture = seasons[(currentSeason + 1)%4]
 
-	SignalBus.emit_signal("season_changed", seasonNames[currentSeason])
+		SignalBus.emit_signal("season_changed", seasonNames[currentSeason])
