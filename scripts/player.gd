@@ -63,6 +63,10 @@ func _process(_delta: float) -> void:
 
 
 func _physics_process(delta: float):
+	print(self.global_position)
+	if self.global_position.y > 1000:
+		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+		
 	if !is_on_floor():
 		_animated_sprite.stop()
 
