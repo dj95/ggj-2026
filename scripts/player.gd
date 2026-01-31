@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var speed = 300
 @export var gravity = 40
 @export var jump_force = 800
-@export var glide_speed = 75
+@export var glide_speed = 175
 
 var jump_count := 0
 var max_jumps := 2
@@ -39,14 +39,13 @@ func _physics_process(delta: float):
 	if !is_on_floor():
 		_animated_sprite.stop()
 
+		velocity.y += gravity
 		if is_gliding:
 			# gliding
-			velocity.y += gravity * 0.3
 			if velocity.y > glide_speed:
 				velocity.y = glide_speed
 		else:
 			# regular jump
-			velocity.y += gravity
 			if velocity.y > 1000:
 				velocity.y = 1000
 
@@ -62,6 +61,7 @@ func _physics_process(delta: float):
 			
 			# second jump
 			if current_season == "autumn":
+				velocity.y = -jump_force
 				is_gliding = true
 			else:
 				velocity.y = -jump_force
