@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://cbib7o5ppjx1j"]
+
+[ext_resource type="Script" uid="uid://cymbp0o41rpax" path="res://scripts/in_game_ui.gd" id="1_5lkar"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_db7xr"]
+resource_local_to_scene = true
+resource_name = "SeasonLabelSettings"
+font_size = 40
+
+[node name="Control" type="Control" unique_id=530651095]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_5lkar")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=670240865]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 78.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=730557826]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="PrevSeason" type="Panel" parent="MarginContainer/HBoxContainer" unique_id=2040123135]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/PrevSeason" unique_id=1269248177]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 101.0
+offset_right = 60.0
+offset_bottom = 156.0
+theme_override_font_sizes/font_size = 100
+text = "q"
+label_settings = SubResource("LabelSettings_db7xr")
+vertical_alignment = 1
+
+[node name="PrevSeasonIcon" type="Sprite2D" parent="MarginContainer/HBoxContainer/PrevSeason" unique_id=1195228759]
+unique_name_in_owner = true
+position = Vector2(47.49999, 52.000008)
+scale = Vector2(0.29276317, 0.28476822)
+
+[node name="CurrentSeason" type="Panel" parent="MarginContainer/HBoxContainer" unique_id=2015544953]
+custom_minimum_size = Vector2(150, 200)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="CurrentSeasonIcon" type="Sprite2D" parent="MarginContainer/HBoxContainer/CurrentSeason" unique_id=1973175154]
+unique_name_in_owner = true
+position = Vector2(74, 103.00001)
+scale = Vector2(0.42781693, 0.44932437)
+
+[node name="NextSeason" type="Panel" parent="MarginContainer/HBoxContainer" unique_id=909701189]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/NextSeason" unique_id=1167773127]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 100.0
+offset_right = 70.0
+offset_bottom = 155.0
+scale = Vector2(1.0016812, 1)
+text = "e"
+label_settings = SubResource("LabelSettings_db7xr")
+
+[node name="NextSeasonIcon" type="Sprite2D" parent="MarginContainer/HBoxContainer/NextSeason" unique_id=198008275]
+unique_name_in_owner = true
+position = Vector2(46.5, 48.5)
+scale = Vector2(0.3347826, 0.30357143)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1835661482]
