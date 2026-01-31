@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-@export var speed = 250
+@export var speed = 300
 @export var gravity = 40
-@export var jump_force = 650
+@export var jump_force = 800
 @export var glide_speed = 75
 
 var jump_count := 0
@@ -22,6 +22,20 @@ func _input(event: InputEvent) -> void:
 			paused = true
 		
 
+var seasonIndex = {
+	"spring": 0,
+	"summer": 1,
+	"autumn": 2,
+	"winter": 3
+}
+
+@onready var _animated_sprite = $AnimationPlayer
+
+var current_season = "spring"
+
+func _ready() -> void:
+	SignalBus.connect("season_changed", Callable(self, "_season_changes"))
+
 func _process(_delta: float) -> void:
 	if Input.is_action_pressed("move_right"):
 		_animated_sprite.play("walk")
@@ -34,36 +48,38 @@ func _process(_delta: float) -> void:
 func _physics_process(delta: float):
 	if !is_on_floor():
 		_animated_sprite.stop()
-		
-		# gliding
+
 		if is_gliding:
+			# gliding
 			velocity.y += gravity * 0.3
 			if velocity.y > glide_speed:
 				velocity.y = glide_speed
-				
-		# regular jump
 		else:
+			# regular jump
 			velocity.y += gravity
 			if velocity.y > 1000:
 				velocity.y = 1000
 
 	if Input.is_action_just_pressed("jump"):
+		# reset on floor
 		if is_on_floor():
-			jump_count = 0
+			jump_count = 0 
 
 		if jump_count == 0:
 			velocity.y = -jump_force
 			jump_count += 1
-
 		elif jump_count == 1:
-			is_gliding = true
+			
+			# second jump
+			if current_season == "autumn":
+				is_gliding = true
+			else:
+				velocity.y = -jump_force
 			jump_count += 1
 
-	# stop glide on jump release
+	# stop gliding on jump release
 	if Input.is_action_just_released("jump"):
 		is_gliding = false
-
-	move_and_slide()
 
 	# movement
 	var horizontal_direction = Input.get_axis("move_left", "move_right")
@@ -88,3 +104,8 @@ func _on_resume_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
+	
+func _season_changes(season):
+	current_season = season
+	#stop gliding when season changes
+	is_gliding = false
