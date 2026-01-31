@@ -140,7 +140,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.7411765, 0.7411765, 0.7411765, 1)
+color = Color(0.23921569, 0.23921569, 0.23921569, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PauseScreen/ColorRect" unique_id=120828890]
 layout_mode = 1
@@ -163,10 +163,16 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Resume"
 
+[node name="MainMenu" type="Button" parent="PauseScreen/ColorRect/VBoxContainer" unique_id=1119432783]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Main Menu"
+
 [node name="Quit" type="Button" parent="PauseScreen/ColorRect/VBoxContainer" unique_id=2103230310]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Quit"
 
 [connection signal="pressed" from="PauseScreen/ColorRect/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PauseScreen/ColorRect/VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="PauseScreen/ColorRect/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
