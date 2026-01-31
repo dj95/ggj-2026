@@ -20,16 +20,6 @@ func _input(event: InputEvent) -> void:
 			pauseScreen.visible = true
 			set_physics_process(false)
 			paused = true
-		
-
-var seasonIndex = {
-	"spring": 0,
-	"summer": 1,
-	"autumn": 2,
-	"winter": 3
-}
-
-@onready var _animated_sprite = $AnimationPlayer
 
 var current_season = "spring"
 
