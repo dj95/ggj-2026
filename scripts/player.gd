@@ -95,7 +95,13 @@ func _on_resume_pressed() -> void:
 func _on_quit_pressed() -> void:
 	get_tree().quit()
 	
+	
 func _season_changes(season):
 	current_season = season
 	#stop gliding when season changes
 	is_gliding = false
+
+
+func _on_main_menu_pressed() -> void:
+	print("Main Menu")
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
