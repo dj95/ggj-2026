@@ -36,7 +36,7 @@ var seasonAtmo = [springAtmo, summerAtmo, autumnAtmo, winterAtmo]
 @onready var backgroundMusic = %Level1BackgroundMusic
 @onready var backgroundAtmo = %Level1AtmoMusic
 
-func _input(event: InputEvent) -> void:
+func _input(_event: InputEvent) -> void:
 	if !pauseScreen.visible:
 		if Input.is_action_pressed("pause"):
 			pauseScreen.visible = true
@@ -62,8 +62,7 @@ func _process(_delta: float) -> void:
 		_animated_sprite.stop()
 
 
-func _physics_process(delta: float):
-	print(self.global_position)
+func _physics_process(_delta: float):
 	if self.global_position.y > 1000:
 		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 		

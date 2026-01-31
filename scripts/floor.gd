@@ -16,7 +16,3 @@ var seasonModulate = [
 
 func _ready() -> void:
 	SignalBus.connect("season_changed", Callable(self, "_on_season_change"))
-	
-func _on_season_change(season: String) -> void:
-	var currentSeason = seasonIndex[season]
-	# floorModulate.modulate = seasonModulate[currentSeason]
