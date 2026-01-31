@@ -2,10 +2,10 @@ class_name in_game_ui
 extends Control
 
 
-var springIcon = load("res://assets/img/seasons/spring.png")
-var summerIcon = load("res://assets/img/seasons/summer.png")
-var autumnIcon = load("res://assets/img/seasons/autumn.png")
-var winterIcon = load("res://assets/img/seasons/winter.png")
+var springIcon = load("res://assets/img/icons/spring.png")
+var summerIcon = load("res://assets/img/icons/summer.png")
+var autumnIcon = load("res://assets/img/icons/autumn.png")
+var winterIcon = load("res://assets/img/icons/winter.png")
 
 @onready var previousSeasonIcon = %PrevSeasonIcon
 @onready var currentSeasonIcon = %CurrentSeasonIcon

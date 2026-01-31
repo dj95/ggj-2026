@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/GGJ2-Menu-Loop.mp3-bf1922595ee4948704c872c1e1
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

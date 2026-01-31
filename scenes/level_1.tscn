@@ -8,33 +8,41 @@
 [node name="level_1" type="Node2D" unique_id=2001331831]
 
 [node name="Node2D" parent="." unique_id=1162432400 instance=ExtResource("1_rus8k")]
-position = Vector2(-69, -326)
+position = Vector2(-67, -174)
 
 [node name="Bush1" parent="." unique_id=538577809 instance=ExtResource("4_5xbjy")]
-position = Vector2(374, 589)
+position = Vector2(374, 702)
 scale = Vector2(0.2, 0.2)
 
 [node name="Bush2" parent="." unique_id=402790085 instance=ExtResource("4_5xbjy")]
-position = Vector2(865, 594)
+position = Vector2(865, 707)
 scale = Vector2(0.2, 0.2)
 
 [node name="Player" parent="." unique_id=539628790 instance=ExtResource("1_bswci")]
-position = Vector2(78, 557)
+position = Vector2(581, 676)
 
 [node name="floor" parent="." unique_id=1049295274 instance=ExtResource("2_rus8k")]
-position = Vector2(1, 624)
+position = Vector2(7, 751)
 
 [node name="StaticBody2D" parent="." unique_id=1527918553 instance=ExtResource("2_rus8k")]
-position = Vector2(1168.13, 550)
+position = Vector2(1167, 671)
 scale = Vector2(0.2, 1)
 
 [node name="StaticBody2D2" parent="." unique_id=65798086 instance=ExtResource("2_rus8k")]
-position = Vector2(1413, 483)
+position = Vector2(1396, 598)
 scale = Vector2(0.2, 1)
 
 [node name="StaticBody2D3" parent="." unique_id=1538930884 instance=ExtResource("2_rus8k")]
-position = Vector2(1666, 418)
+position = Vector2(1622, 539)
 scale = Vector2(0.2, 1)
+
+[node name="StaticBody2D4" parent="." unique_id=449100515 instance=ExtResource("2_rus8k")]
+position = Vector2(1853, 588)
+scale = Vector2(0.2, 1)
+
+[node name="StaticBody2D5" parent="." unique_id=528622401 instance=ExtResource("2_rus8k")]
+position = Vector2(2436, 603)
+scale = Vector2(0.991138, 1.1353724)
 
 [node name="Level1BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=861669935]
 unique_name_in_owner = true

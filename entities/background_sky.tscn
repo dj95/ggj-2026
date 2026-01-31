@@ -12,37 +12,37 @@ script = ExtResource("1_urvvo")
 [node name="SkyBG" type="Parallax2D" parent="." unique_id=1237522723]
 texture_repeat = 2
 scroll_scale = Vector2(0.7, 1)
-repeat_size = Vector2(961, 551)
-repeat_times = 3
+repeat_size = Vector2(1920, 0)
+repeat_times = 2
 
 [node name="SpriteSkyBG" type="Sprite2D" parent="SkyBG" unique_id=441189310]
 unique_name_in_owner = true
-position = Vector2(961.25, 551.75)
-scale = Vector2(3.3394098, 3.3780863)
+position = Vector2(1380, 372)
+scale = Vector2(3.382152, 5.0321608)
 texture = ExtResource("1_hqt00")
 
 [node name="Cloud 1" type="Parallax2D" parent="." unique_id=564018313]
 texture_repeat = 2
 scroll_scale = Vector2(0.6, 1)
-repeat_size = Vector2(958, 0)
+repeat_size = Vector2(2050, 0)
 repeat_times = 3
 
 [node name="SpriteCloud1" type="Sprite2D" parent="Cloud 1" unique_id=840044967]
 unique_name_in_owner = true
-position = Vector2(958, 695)
-scale = Vector2(3.324653, 2.5138888)
+position = Vector2(1472, 499)
+scale = Vector2(3.563368, 3.275463)
 texture = ExtResource("2_wg7al")
 
 [node name="Cloud 2" type="Parallax2D" parent="." unique_id=1487837230]
 texture_repeat = 2
 scroll_scale = Vector2(0.5, 1)
-repeat_size = Vector2(1003, 0)
+repeat_size = Vector2(1250, 0)
 repeat_times = 3
 
 [node name="SpriteCloud2" type="Sprite2D" parent="Cloud 2" unique_id=350117856]
 unique_name_in_owner = true
-position = Vector2(1003.00006, 688.99994)
-scale = Vector2(1.8819444, 2.5462964)
+position = Vector2(1056, 603.00006)
+scale = Vector2(2.2048612, 3.0354939)
 texture = ExtResource("3_53mht")
 
 [node name="Grass 1" type="Parallax2D" parent="." unique_id=763024898]

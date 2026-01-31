@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://cbib7o5ppjx1j"]
 
 [ext_resource type="Script" uid="uid://cymbp0o41rpax" path="res://scripts/in_game_ui.gd" id="1_5lkar"]
+[ext_resource type="Texture2D" uid="uid://d2hxdk5mofh7u" path="res://assets/img/icons/winter.png" id="2_5lkar"]
+[ext_resource type="Texture2D" uid="uid://du744q0d4i53y" path="res://assets/img/icons/spring.png" id="3_udpln"]
+[ext_resource type="Texture2D" uid="uid://duh34ir2aaq63" path="res://assets/img/icons/summer.png" id="4_cxevs"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_db7xr"]
 resource_local_to_scene = true
@@ -47,18 +50,26 @@ vertical_alignment = 1
 
 [node name="PrevSeasonIcon" type="Sprite2D" parent="MarginContainer/HBoxContainer/PrevSeason" unique_id=1195228759]
 unique_name_in_owner = true
-position = Vector2(47.49999, 52.000008)
-scale = Vector2(0.29276317, 0.28476822)
+position = Vector2(50, 49)
+scale = Vector2(0.154, 0.154)
+texture = ExtResource("2_5lkar")
 
 [node name="CurrentSeason" type="Panel" parent="MarginContainer/HBoxContainer" unique_id=2015544953]
-custom_minimum_size = Vector2(150, 200)
+custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 size_flags_vertical = 4
 
 [node name="CurrentSeasonIcon" type="Sprite2D" parent="MarginContainer/HBoxContainer/CurrentSeason" unique_id=1973175154]
 unique_name_in_owner = true
-position = Vector2(74, 103.00001)
-scale = Vector2(0.42781693, 0.44932437)
+position = Vector2(70, 70)
+scale = Vector2(0.22146471, 0.21511854)
+texture = ExtResource("3_udpln")
+
+[node name="Spring" type="Sprite2D" parent="MarginContainer/HBoxContainer/CurrentSeason" unique_id=208902372]
+visible = false
+position = Vector2(75, 97)
+scale = Vector2(0.22639866, 0.23344949)
+texture = ExtResource("3_udpln")
 
 [node name="NextSeason" type="Panel" parent="MarginContainer/HBoxContainer" unique_id=909701189]
 custom_minimum_size = Vector2(100, 100)
@@ -77,7 +88,8 @@ label_settings = SubResource("LabelSettings_db7xr")
 
 [node name="NextSeasonIcon" type="Sprite2D" parent="MarginContainer/HBoxContainer/NextSeason" unique_id=198008275]
 unique_name_in_owner = true
-position = Vector2(46.5, 48.5)
-scale = Vector2(0.3347826, 0.30357143)
+position = Vector2(50, 50)
+scale = Vector2(0.154, 0.154)
+texture = ExtResource("4_cxevs")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1835661482]

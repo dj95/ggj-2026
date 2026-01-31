@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/GGJ1-1-Sommer.mp3-9e3591354459df491e5b2b3f120
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
