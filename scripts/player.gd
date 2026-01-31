@@ -9,7 +9,18 @@ var jump_count := 0
 var max_jumps := 2
 var is_gliding := false
 
+var paused = false
+@onready var pauseScreen = $PauseScreen
+
 @onready var _animated_sprite = $AnimationPlayer
+
+func _input(event: InputEvent) -> void:
+	if !pauseScreen.visible:
+		if Input.is_action_pressed("pause"):
+			pauseScreen.visible = true
+			set_physics_process(false)
+			paused = true
+		
 
 func _process(_delta: float) -> void:
 	if Input.is_action_pressed("move_right"):
@@ -65,3 +76,15 @@ func _physics_process(delta: float):
 		$Sprite2D.flip_h = false
 
 	move_and_slide()
+
+
+func _on_resume_pressed() -> void:
+	print("resume")
+	pauseScreen.visible = false
+	get_tree().paused = false
+	set_process_input(true)
+	set_physics_process(true)
+
+
+func _on_quit_pressed() -> void:
+	get_tree().quit()

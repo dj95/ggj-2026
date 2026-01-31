@@ -1,3 +1,4 @@
+class_name MainMenu
 extends Node
 
 const GAME = preload("res://scenes/level_1.tscn")

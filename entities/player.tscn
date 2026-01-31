@@ -130,3 +130,43 @@ offset_left = 698.0
 offset_top = -646.0
 offset_right = 738.0
 offset_bottom = -606.0
+
+[node name="PauseScreen" type="CanvasLayer" parent="." unique_id=574445189]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="PauseScreen" unique_id=1799022706]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.7411765, 0.7411765, 0.7411765, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseScreen/ColorRect" unique_id=120828890]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -147.5
+offset_top = -134.5
+offset_right = 147.5
+offset_bottom = 134.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Resume" type="Button" parent="PauseScreen/ColorRect/VBoxContainer" unique_id=1727786200]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Resume"
+
+[node name="Quit" type="Button" parent="PauseScreen/ColorRect/VBoxContainer" unique_id=2103230310]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Quit"
+
+[connection signal="pressed" from="PauseScreen/ColorRect/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PauseScreen/ColorRect/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
