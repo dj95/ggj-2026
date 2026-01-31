@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c6a0uwpr28gam"]
+
+[ext_resource type="Texture2D" uid="uid://cw1jxldq0wae8" path="res://assets/img/stones/stone3.png" id="1_bebqt"]
+
+[node name="Stone1" type="Node2D" unique_id=573343639]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=523523898]
+position = Vector2(12, 0)
+texture = ExtResource("1_bebqt")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D" unique_id=411015265]
+position = Vector2(-12, 0)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/StaticBody2D" unique_id=1985975697]
+polygon = PackedVector2Array(-397, -41, -415, 41, -466, 124, -449, 207, -422, 252, -323, 270, -199, 225, 41, 270, 100, 245, 206, 172, 300, 155, 408, 184, 475, 178, 452, 134, 470, 92, 361, -67, 273, -233, 161, -257, -37, -225, -115, -161, -318, -126, -380, -92)

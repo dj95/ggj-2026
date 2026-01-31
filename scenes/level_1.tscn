@@ -3,7 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://3vqeypmxh3su" path="res://entities/player.tscn" id="1_bswci"]
 [ext_resource type="PackedScene" uid="uid://d00dem17g4e3p" path="res://entities/background_sky.tscn" id="1_rus8k"]
 [ext_resource type="PackedScene" uid="uid://dj1d0butyyf21" path="res://entities/floor.tscn" id="2_rus8k"]
-[ext_resource type="PackedScene" uid="uid://dl7nygysrr2o2" path="res://entities/bush_1.tscn" id="4_5xbjy"]
+[ext_resource type="PackedScene" path="res://entities/bush_1.tscn" id="4_5xbjy"]
+[ext_resource type="PackedScene" uid="uid://4cwxpbg5nuuc" path="res://entities/tree_1.tscn" id="4_fcfvj"]
+[ext_resource type="PackedScene" uid="uid://c6a0uwpr28gam" path="res://entities/stone_2.tscn" id="4_pa8r4"]
+[ext_resource type="PackedScene" uid="uid://po28fkf8cxkn" path="res://entities/stone_1.tscn" id="5_4nkto"]
 
 [node name="level_1" type="Node2D" unique_id=2001331831]
 
@@ -11,12 +14,24 @@
 position = Vector2(-67, -174)
 
 [node name="Bush1" parent="." unique_id=538577809 instance=ExtResource("4_5xbjy")]
-position = Vector2(374, 702)
+position = Vector2(371, 720)
 scale = Vector2(0.2, 0.2)
 
 [node name="Bush2" parent="." unique_id=402790085 instance=ExtResource("4_5xbjy")]
 position = Vector2(865, 707)
 scale = Vector2(0.2, 0.2)
+
+[node name="Stone1" parent="." unique_id=573343639 instance=ExtResource("5_4nkto")]
+position = Vector2(859, 748)
+scale = Vector2(0.20181584, 0.20181584)
+
+[node name="Stone2" parent="." unique_id=1934245995 instance=ExtResource("4_pa8r4")]
+position = Vector2(3298, 549)
+scale = Vector2(0.44539726, 0.44539726)
+
+[node name="Tree1" parent="." unique_id=1909653477 instance=ExtResource("4_fcfvj")]
+position = Vector2(70.000015, 465.00006)
+scale = Vector2(0.15182222, 0.15182222)
 
 [node name="Player" parent="." unique_id=539628790 instance=ExtResource("1_bswci")]
 position = Vector2(581, 676)
