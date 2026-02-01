@@ -28,7 +28,7 @@ position = Vector2(859, 748)
 scale = Vector2(0.20181584, 0.20181584)
 
 [node name="Stone2" parent="." unique_id=1934245995 instance=ExtResource("4_pa8r4")]
-position = Vector2(3298, 549)
+position = Vector2(3203, 548)
 scale = Vector2(0.44539726, 0.44539726)
 
 [node name="Stone5" parent="." unique_id=1219992070 instance=ExtResource("5_15mv3")]
