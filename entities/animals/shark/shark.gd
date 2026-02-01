@@ -9,7 +9,9 @@ var isWinter = false
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite_2d: Sprite2D = $Sprite2D
-@onready var death_eyes: Label = %DeathEyes
+@onready var death_eyes_right: Label = %DeathEyesRight
+@onready var death_eyes_left: Label = %DeathEyesLeft
+
 
 func _ready() -> void:
 	animation_player.play("swim")
@@ -18,12 +20,18 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	if isWinter:
 		animation_player.stop()
-		death_eyes.visible = true
+		if direction == 0:
+			death_eyes_right.visible = true
+		if direction == 1:
+			death_eyes_left.visible = true
 		return
 		
 	if !animation_player.is_playing():
+		if direction == 0:
+			death_eyes_right.visible = false
+		if direction == 1:
+			death_eyes_left.visible = false
 		animation_player.play()
-		death_eyes.visible = false
 	
 	if position.x + speed > 7500:
 		direction = 1

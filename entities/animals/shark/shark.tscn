@@ -51,12 +51,23 @@ hframes = 4
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1751121362]
 libraries/ = SubResource("AnimationLibrary_tr83x")
 
-[node name="DeathEyes" type="Label" parent="." unique_id=537350793]
+[node name="DeathEyesRight" type="Label" parent="." unique_id=537350793]
 unique_name_in_owner = true
 visible = false
 offset_left = 4.0
 offset_top = -7.0
 offset_right = 44.0
+offset_bottom = 16.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "x  "
+
+[node name="DeathEyesLeft" type="Label" parent="." unique_id=750312701]
+unique_name_in_owner = true
+visible = false
+offset_left = -13.0
+offset_top = -7.0
+offset_right = 27.0
 offset_bottom = 16.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 10
