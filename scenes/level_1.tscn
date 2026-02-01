@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://4cwxpbg5nuuc" path="res://entities/structures/tree/tree_1.tscn" id="4_fcfvj"]
 [ext_resource type="PackedScene" uid="uid://c6a0uwpr28gam" path="res://entities/structures/stone/stone_2.tscn" id="4_pa8r4"]
 [ext_resource type="PackedScene" uid="uid://po28fkf8cxkn" path="res://entities/structures/stone/stone_1.tscn" id="5_4nkto"]
+[ext_resource type="PackedScene" uid="uid://baf1cp53d7r37" path="res://entities/structures/stone/stone_5.tscn" id="5_15mv3"]
+[ext_resource type="PackedScene" uid="uid://cip6lk3ubnvxq" path="res://entities/structures/lake/lake.tscn" id="9_e3sih"]
 
 [node name="level_1" type="Node2D" unique_id=2001331831]
 
@@ -28,6 +30,9 @@ scale = Vector2(0.20181584, 0.20181584)
 [node name="Stone2" parent="." unique_id=1934245995 instance=ExtResource("4_pa8r4")]
 position = Vector2(3298, 549)
 scale = Vector2(0.44539726, 0.44539726)
+
+[node name="Stone5" parent="." unique_id=1219992070 instance=ExtResource("5_15mv3")]
+position = Vector2(4006, 710)
 
 [node name="Tree1" parent="." unique_id=1909653477 instance=ExtResource("4_fcfvj")]
 position = Vector2(70.000015, 465.00006)
@@ -67,6 +72,10 @@ scale = Vector2(0.2, 1)
 position = Vector2(2436, 603)
 scale = Vector2(0.991138, 1.1353724)
 
+[node name="StaticBody2D6" parent="." unique_id=911875056 instance=ExtResource("2_rus8k")]
+position = Vector2(4547, 623)
+scale = Vector2(0.991138, 1.1353724)
+
 [node name="Level1BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=861669935]
 unique_name_in_owner = true
 volume_db = -20.0
@@ -77,3 +86,7 @@ unique_name_in_owner = true
 
 [node name="Level1TransitionMusic" type="AudioStreamPlayer" parent="." unique_id=986859041]
 unique_name_in_owner = true
+
+[node name="Lake" parent="." unique_id=105327382 instance=ExtResource("9_e3sih")]
+position = Vector2(6711.0005, 1329)
+scale = Vector2(0.29672787, 0.61094713)

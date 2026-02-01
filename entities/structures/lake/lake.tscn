@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cip6lk3ubnvxq"]
+
+[ext_resource type="Script" uid="uid://ieltld7da0si" path="res://entities/structures/lake/lake.gd" id="1_b8w2k"]
+[ext_resource type="Texture2D" uid="uid://cm3wn7lkeouka" path="res://entities/structures/lake/art/lake.jpg" id="1_tsk6a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tsk6a"]
+size = Vector2(6857, 2173.5)
+
+[node name="Lake" type="Node2D" unique_id=105327382]
+script = ExtResource("1_b8w2k")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=784601302]
+unique_name_in_owner = true
+texture = ExtResource("1_tsk6a")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Background" unique_id=1022144454]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/StaticBody2D" unique_id=426102653]
+position = Vector2(-1.5, 6.25)
+shape = SubResource("RectangleShape2D_tsk6a")
