@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dj1d0butyyf21"]
 
-[ext_resource type="Texture2D" uid="uid://cewd3ocjaggvi" path="res://entities/backgrounds/level_1/art/grass/winter.png" id="1_meu4o"]
 [ext_resource type="Script" uid="uid://yo1cc8o74d3w" path="res://entities/structures/grass/grass.gd" id="1_v4r62"]
 [ext_resource type="Texture2D" uid="uid://ba05b78oh78lk" path="res://entities/structures/grass/art/earth.PNG" id="2_frf8h"]
+[ext_resource type="Texture2D" uid="uid://b1xrt8psk8iog" path="res://entities/structures/grass/art/floor.png" id="3_v4r62"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_ryoud"]
 size = Vector2(1000, 50)
@@ -21,16 +21,16 @@ position = Vector2(584, 25)
 scale = Vector2(1.169, 1)
 mesh = SubResource("QuadMesh_ryoud")
 
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=649509138]
+[node name="SpriteEarth" type="Sprite2D" parent="." unique_id=649509138]
 position = Vector2(580.5, 589)
 scale = Vector2(0.5815, 0.563)
 texture = ExtResource("2_frf8h")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=484454904]
+[node name="SpriteGrass" type="Sprite2D" parent="." unique_id=484454904]
 material = SubResource("CanvasItemMaterial_ryoud")
 position = Vector2(580, 13)
 scale = Vector2(0.1671211, 0.19040447)
-texture = ExtResource("1_meu4o")
+texture = ExtResource("3_v4r62")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1334002849]
 position = Vector2(580, 575)
