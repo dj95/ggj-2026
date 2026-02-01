@@ -45,6 +45,7 @@ _data = {
 script = ExtResource("1_d86pi")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1502652413]
+texture_filter = 1
 texture = ExtResource("1_741bi")
 hframes = 8
 

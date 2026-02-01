@@ -46,6 +46,7 @@ _data = {
 script = ExtResource("1_onrkg")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=534086194]
+texture_filter = 1
 position = Vector2(-9.499998, -17.499992)
 scale = Vector2(4.333333, 5.21875)
 texture = ExtResource("2_tjdhl")

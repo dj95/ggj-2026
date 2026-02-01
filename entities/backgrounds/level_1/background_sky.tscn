@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://c8u13570aq6si" path="res://entities/backgrounds/level_1/background_sky.gd" id="1_urvvo"]
 [ext_resource type="Texture2D" uid="uid://beewthesv5dcd" path="res://entities/backgrounds/level_1/art/sky/spring/3.png" id="2_wg7al"]
 [ext_resource type="Texture2D" uid="uid://b3qli178i8r4k" path="res://entities/backgrounds/level_1/art/sky/spring/4.png" id="3_53mht"]
+[ext_resource type="Texture2D" uid="uid://ba05b78oh78lk" path="res://entities/structures/grass/art/earth.PNG" id="3_kx2su"]
 [ext_resource type="Texture2D" uid="uid://b50ky3avf6owm" path="res://entities/backgrounds/level_1/art/grass/summer.png" id="4_wg7al"]
 
 [node name="Node2D" type="Node2D" unique_id=1162432400]
@@ -12,14 +13,25 @@ script = ExtResource("1_urvvo")
 [node name="SkyBG" type="Parallax2D" parent="." unique_id=1237522723]
 texture_repeat = 2
 scroll_scale = Vector2(0.7, 1)
-repeat_size = Vector2(1920, 0)
-repeat_times = 2
+repeat_size = Vector2(1920, 1000)
+repeat_times = 6
 
 [node name="SpriteSkyBG" type="Sprite2D" parent="SkyBG" unique_id=441189310]
 unique_name_in_owner = true
 position = Vector2(1380, 372)
 scale = Vector2(3.382152, 5.0321608)
 texture = ExtResource("1_hqt00")
+
+[node name="SkyBG2" type="Parallax2D" parent="." unique_id=1487109527]
+texture_repeat = 2
+scroll_scale = Vector2(0.7, 1)
+repeat_size = Vector2(1920, 0)
+repeat_times = 6
+
+[node name="SpriteSkyBG" type="Sprite2D" parent="SkyBG2" unique_id=84350825]
+position = Vector2(1846, 6246)
+scale = Vector2(3.382152, 5.0321608)
+texture = ExtResource("3_kx2su")
 
 [node name="Cloud 1" type="Parallax2D" parent="." unique_id=564018313]
 texture_repeat = 2
