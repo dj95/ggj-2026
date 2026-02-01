@@ -105,6 +105,9 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Quit"
 
+[node name="ClickPlayer" type="AudioStreamPlayer" parent="PauseScreen" unique_id=1900594441]
+unique_name_in_owner = true
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=446107594]
 position = Vector2(-13.999999, 2)
 scale = Vector2(5.2624702, 6.5053864)

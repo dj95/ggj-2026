@@ -20,18 +20,30 @@ var current_season = "spring"
 
 @onready var pauseScreen = $PauseScreen
 @onready var _animated_sprite = $AnimationPlayer
+@onready var click_player: AudioStreamPlayer = %ClickPlayer
 
 
 func _input(_event: InputEvent) -> void:
 	if !pauseScreen.visible:
 		if Input.is_action_pressed("pause"):
+			# play menu in sound
+			click_player.stream = load("res://entities/player/sound/menu_in.wav")
+			click_player.play()
+
+			# actually pause the game and show the pause screen
 			pauseScreen.visible = true
 			set_physics_process(false)
 			paused = true
+			
+			# reset to click sound after menu in sound has been played
+			await get_tree().create_timer(0.2).timeout
+			click_player.stream = load("res://entities/player/sound/menuClick_1.wav")
+
 
 
 func _ready() -> void:
 	SignalBus.connect("season_changed", Callable(self, "_season_changes"))
+	click_player.stream = load("res://entities/player/sound/menuClick_1.wav")
 
 
 func _process(_delta: float) -> void:
@@ -82,6 +94,7 @@ func _jump_and_glide():
 		if is_on_floor():
 			jump_count = 0
 
+		# swim
 		if is_swimming:
 			velocity.y = -jump_force
 			return
@@ -110,17 +123,27 @@ func _season_changes(season):
 
 
 func _on_resume_pressed() -> void:
-	print("resume")
+	click_player.stream = load("res://entities/player/sound/menu_out.wav")
+	click_player.play()
+	
+	await get_tree().create_timer(0.2).timeout
+	click_player.stream = load("res://entities/player/sound/menuClick_1.wav")
+
 	pauseScreen.visible = false
 	get_tree().paused = false
 	set_process_input(true)
 	set_physics_process(true)
+	
+	
 
 
 func _on_quit_pressed() -> void:
+	click_player.play()
+
 	get_tree().quit()
 
 
 func _on_main_menu_pressed() -> void:
-	print("Main Menu")
+	click_player.play()
+
 	get_tree().change_scene_to_file("res://scenes/main_menu/main_menu.tscn")
