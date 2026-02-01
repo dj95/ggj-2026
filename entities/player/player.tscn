@@ -4,9 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://j4rsvi25kv4a" path="res://entities/player/art/2d_animation_player-run.webp" id="2_tjdhl"]
 [ext_resource type="PackedScene" uid="uid://cbib7o5ppjx1j" path="res://entities/player/in_game_ui.tscn" id="11_x08pd"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
-size = Vector2(88, 126)
-
 [sub_resource type="Animation" id="Animation_dchgp"]
 length = 0.001
 tracks/0/type = "bezier"
@@ -45,10 +42,6 @@ _data = {
 
 [node name="Player" type="CharacterBody2D" unique_id=553831703]
 script = ExtResource("1_onrkg")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=966831861]
-position = Vector2(-9, 0)
-shape = SubResource("RectangleShape2D_onrkg")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=534086194]
 position = Vector2(-9.499998, -17.499992)
@@ -109,6 +102,11 @@ text = "Main Menu"
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Quit"
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="." unique_id=2129312047]
+position = Vector2(-9.499998, -17.499992)
+scale = Vector2(4.333333, 5.21875)
+polygon = PackedVector2Array(7.5, -7.6000004, 7.5, -9.4, 2.5, -7.7, -7.5, -9.2, -7.5, -7.3999996, -7.8999996, -7, -9.5, -7, -9.5, -0.39999962, -10.9, 1, -12.5, 1, -12.5, 3, -13.5, 3, -13.5, 7.3999996, -11.5, 9.4, -11.5, 11.6, -7.5, 13.6, -7.5, 16, 3.6000004, 16, 9, 8, 10.5, 8, 10.5, -5.5)
 
 [connection signal="pressed" from="PauseScreen/ColorRect/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PauseScreen/ColorRect/VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
