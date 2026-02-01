@@ -48,5 +48,10 @@ script = ExtResource("1_d86pi")
 texture = ExtResource("1_741bi")
 hframes = 8
 
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D" unique_id=225561061]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/StaticBody2D" unique_id=927537157]
+polygon = PackedVector2Array(-21, 28, -19, 27, -14, 27, -12, 25, -11, 23, -9, 21, -5, 21, -3, 22, 9, 22, 10, 20, 15, 19, 17, 19, 21, 24, 23, 24, 23, 27, 22, 29, 16, 29, 14, 32, -22, 32)
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1134885791]
 libraries/ = SubResource("AnimationLibrary_e554c")
