@@ -6,7 +6,7 @@ const GAME = preload("res://scenes/level_1.tscn")
 @onready var clickPlayer = %ClickPlayer
 
 func _ready() -> void:
-	clickPlayer.stream = load("res://assets/audio/menu/menuClick_1.wav")
+	clickPlayer.stream = load("res://scenes/main_menu/sound/menuClick_1.wav")
 
 
 func _on_button_play_pressed() -> void:

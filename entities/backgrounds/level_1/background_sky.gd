@@ -18,7 +18,7 @@ func _ready() -> void:
 	spriteSkyBG.texture = load("res://entities/backgrounds/level_1/art/sky/spring/1.png")
 	spriteCloud1.texture = load("res://entities/backgrounds/level_1/art/sky/spring/3.png")
 	spriteCloud2.texture = load("res://entities/backgrounds/level_1/art/sky/spring/4.png")
-	spriteGrass1.texture = load("res://entities/backgrounds/level_1/art/sky/grass/spring.png")
+	spriteGrass1.texture = load("res://entities/backgrounds/level_1/art/grass/spring.png")
 	
 	music.stream = load("res://entities/backgrounds/level_1/sound/music/spring.mp3")
 	atmo.stream = load("res://entities/backgrounds/level_1/sound/atmo/spring.wav")

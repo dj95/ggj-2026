@@ -30,8 +30,8 @@ func _input(event: InputEvent) -> void:
 		season_changed = true
 
 	if season_changed:
-		previousSeasonIcon.texture = load("res://entities/player/art/masks/"+seasonNames[currentSeason - 1 % 4]+".png")
+		previousSeasonIcon.texture = load("res://entities/player/art/masks/"+seasonNames[(currentSeason - 1) % 4]+".png")
 		currentSeasonIcon.texture = load("res://entities/player/art/masks/"+seasonNames[currentSeason]+".png")
-		nextSeasonIcon.texture = load("res://entities/player/art/masks/"+seasonNames[currentSeason + 1 % 4]+".png")
+		nextSeasonIcon.texture = load("res://entities/player/art/masks/"+seasonNames[(currentSeason + 1) % 4]+".png")
 
 		SignalBus.emit_signal("season_changed", seasonNames[currentSeason])
