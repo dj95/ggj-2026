@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://c567bx1lextou"]
 
-[ext_resource type="PackedScene" uid="uid://3vqeypmxh3su" path="res://entities/player.tscn" id="1_bswci"]
-[ext_resource type="PackedScene" uid="uid://d00dem17g4e3p" path="res://entities/background_sky.tscn" id="1_rus8k"]
-[ext_resource type="PackedScene" uid="uid://dj1d0butyyf21" path="res://entities/floor.tscn" id="2_rus8k"]
-[ext_resource type="PackedScene" path="res://entities/bush_1.tscn" id="4_5xbjy"]
-[ext_resource type="PackedScene" uid="uid://4cwxpbg5nuuc" path="res://entities/tree_1.tscn" id="4_fcfvj"]
-[ext_resource type="PackedScene" uid="uid://c6a0uwpr28gam" path="res://entities/stone_2.tscn" id="4_pa8r4"]
-[ext_resource type="PackedScene" uid="uid://po28fkf8cxkn" path="res://entities/stone_1.tscn" id="5_4nkto"]
+[ext_resource type="PackedScene" uid="uid://3vqeypmxh3su" path="res://entities/player/player.tscn" id="1_bswci"]
+[ext_resource type="PackedScene" uid="uid://d00dem17g4e3p" path="res://entities/backgrounds/level_1/background_sky.tscn" id="1_rus8k"]
+[ext_resource type="PackedScene" uid="uid://dj1d0butyyf21" path="res://entities/structures/grass/grass.tscn" id="2_rus8k"]
+[ext_resource type="PackedScene" uid="uid://dl7nygysrr2o2" path="res://entities/structures/bush/bush_1.tscn" id="4_5xbjy"]
+[ext_resource type="PackedScene" uid="uid://4cwxpbg5nuuc" path="res://entities/structures/tree/tree_1.tscn" id="4_fcfvj"]
+[ext_resource type="PackedScene" uid="uid://c6a0uwpr28gam" path="res://entities/structures/stone/stone_2.tscn" id="4_pa8r4"]
+[ext_resource type="PackedScene" uid="uid://po28fkf8cxkn" path="res://entities/structures/stone/stone_1.tscn" id="5_4nkto"]
 
 [node name="level_1" type="Node2D" unique_id=2001331831]
 

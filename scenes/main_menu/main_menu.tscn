@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://cv0yu4dqr6amg"]
+
+[ext_resource type="Script" uid="uid://uomwi01ptuya" path="res://scenes/main_menu/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://btmd3upq7n4xh" path="res://assets/img/Menu.jpg" id="2_bqqt6"]
+[ext_resource type="AudioStream" uid="uid://76pf74krn4d" path="res://scenes/main_menu/sound/GGJ2-Menu-Loop.mp3" id="2_ekxnf"]
+
+[node name="PanelContainer" type="PanelContainer" unique_id=1914163403]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l6cm7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1390142387]
+visible = false
+position = Vector2(940.49994, 543.49994)
+scale = Vector2(0.28114232, 0.21722312)
+texture = ExtResource("2_bqqt6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1362644554]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.75
+theme_override_constants/separation = 19
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1340332504]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Masked Seasons"
+horizontal_alignment = 1
+
+[node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=1551911108]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Play"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=1424998059]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Quit"
+
+[node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1212024523]
+stream = ExtResource("2_ekxnf")
+autoplay = true
+
+[node name="ClickPlayer" type="AudioStreamPlayer" parent="." unique_id=1354281005]
+unique_name_in_owner = true
+
+[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_button_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

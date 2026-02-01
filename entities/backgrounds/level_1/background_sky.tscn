@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://d00dem17g4e3p"]
+
+[ext_resource type="Texture2D" uid="uid://dfkksav2rold0" path="res://entities/backgrounds/level_1/art/sky/spring/1.png" id="1_hqt00"]
+[ext_resource type="Script" uid="uid://c8u13570aq6si" path="res://entities/backgrounds/level_1/background_sky.gd" id="1_urvvo"]
+[ext_resource type="Texture2D" uid="uid://beewthesv5dcd" path="res://entities/backgrounds/level_1/art/sky/spring/3.png" id="2_wg7al"]
+[ext_resource type="Texture2D" uid="uid://b3qli178i8r4k" path="res://entities/backgrounds/level_1/art/sky/spring/4.png" id="3_53mht"]
+[ext_resource type="Texture2D" uid="uid://b50ky3avf6owm" path="res://entities/backgrounds/level_1/art/grass/summer.png" id="4_wg7al"]
+
+[node name="Node2D" type="Node2D" unique_id=1162432400]
+script = ExtResource("1_urvvo")
+
+[node name="SkyBG" type="Parallax2D" parent="." unique_id=1237522723]
+texture_repeat = 2
+scroll_scale = Vector2(0.7, 1)
+repeat_size = Vector2(1920, 0)
+repeat_times = 2
+
+[node name="SpriteSkyBG" type="Sprite2D" parent="SkyBG" unique_id=441189310]
+unique_name_in_owner = true
+position = Vector2(1380, 372)
+scale = Vector2(3.382152, 5.0321608)
+texture = ExtResource("1_hqt00")
+
+[node name="Cloud 1" type="Parallax2D" parent="." unique_id=564018313]
+texture_repeat = 2
+scroll_scale = Vector2(0.6, 1)
+repeat_size = Vector2(2050, 0)
+repeat_times = 3
+
+[node name="SpriteCloud1" type="Sprite2D" parent="Cloud 1" unique_id=840044967]
+unique_name_in_owner = true
+position = Vector2(1472, 499)
+scale = Vector2(3.563368, 3.275463)
+texture = ExtResource("2_wg7al")
+
+[node name="Cloud 2" type="Parallax2D" parent="." unique_id=1487837230]
+texture_repeat = 2
+scroll_scale = Vector2(0.5, 1)
+repeat_size = Vector2(1250, 0)
+repeat_times = 3
+
+[node name="SpriteCloud2" type="Sprite2D" parent="Cloud 2" unique_id=350117856]
+unique_name_in_owner = true
+position = Vector2(1056, 603.00006)
+scale = Vector2(2.2048612, 3.0354939)
+texture = ExtResource("3_53mht")
+
+[node name="Grass 1" type="Parallax2D" parent="." unique_id=763024898]
+scroll_scale = Vector2(0.4, 1)
+repeat_size = Vector2(1944, 0)
+repeat_times = 3
+
+[node name="SpriteGrass1" type="Sprite2D" parent="Grass 1" unique_id=1472375803]
+unique_name_in_owner = true
+position = Vector2(1944, 1019)
+scale = Vector2(0.57053673, 0.8368211)
+texture = ExtResource("4_wg7al")
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1270331489]
+unique_name_in_owner = true
+volume_db = -20.0
+
+[node name="Atmo" type="AudioStreamPlayer" parent="." unique_id=1691872639]
+unique_name_in_owner = true
+
+[node name="Transition" type="AudioStreamPlayer" parent="." unique_id=2146455159]
+unique_name_in_owner = true
