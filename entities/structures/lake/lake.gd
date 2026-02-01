@@ -28,14 +28,13 @@ func _process(_delta: float) -> void:
 
 
 func _season_changes(season: String) -> void:
-	var backgroundTexture = load("res://entities/structures/lake/art/lake.jpg")
-	if season == "winter":
-		backgroundTexture = load("res://entities/structures/lake/art/lake_frozen.jpg")
-	
-	background.texture = backgroundTexture
 	isWinter = season == "winter"
-	
 	ice_shape.disabled = !isWinter
+	
+	var backgroundTexture = load("res://entities/structures/lake/art/lake.jpg")
+	if isWinter:
+		backgroundTexture = load("res://entities/structures/lake/art/lake_frozen.jpg")
+	background.texture = backgroundTexture
 
 
 func _on_body_entered(body: Node2D) -> void:
@@ -54,8 +53,10 @@ func _on_body_exited(body: Node2D) -> void:
 func _player_enable_swimming(player: CharacterBody2D) -> void:
 	savedGravity = player.gravity
 	player.gravity = underWaterGravity
+	
 	savedJumpForce = player.jump_force
 	player.jump_force = underWaterJumpForce
+	
 	player.is_swimming = true
 
 
