@@ -45,8 +45,8 @@ func _process(_delta: float) -> void:
 
 func _physics_process(_delta: float):
 	# dead
-	if self.global_position.y > 1000:
-		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	if self.global_position.y > 1500:
+		get_tree().change_scene_to_file("res://scenes/main_menu/main_menu.tscn")
 
 	_jump_and_glide()
 

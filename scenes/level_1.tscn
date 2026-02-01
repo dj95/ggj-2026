@@ -44,7 +44,7 @@ position = Vector2(1075, 453.00003)
 scale = Vector2(0.15182222, 0.15182222)
 
 [node name="Lake" parent="." unique_id=105327382 instance=ExtResource("9_e3sih")]
-position = Vector2(2729.0007, 1283.9999)
+position = Vector2(6706.0005, 1282.9999)
 scale = Vector2(0.29672787, 0.61094713)
 
 [node name="Player" parent="." unique_id=539628790 instance=ExtResource("1_bswci")]
@@ -78,6 +78,10 @@ scale = Vector2(0.991138, 1.1353724)
 
 [node name="StaticBody2D6" parent="." unique_id=911875056 instance=ExtResource("2_rus8k")]
 position = Vector2(4547, 623)
+scale = Vector2(0.991138, 1.1353724)
+
+[node name="StaticBody2D7" parent="." unique_id=1062514945 instance=ExtResource("2_rus8k")]
+position = Vector2(7682.0005, 628)
 scale = Vector2(0.991138, 1.1353724)
 
 [node name="Level1BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=861669935]
