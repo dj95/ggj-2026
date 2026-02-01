@@ -43,6 +43,10 @@ collision = true
 position = Vector2(1075, 453.00003)
 scale = Vector2(0.15182222, 0.15182222)
 
+[node name="Lake" parent="." unique_id=105327382 instance=ExtResource("9_e3sih")]
+position = Vector2(2729.0007, 1283.9999)
+scale = Vector2(0.29672787, 0.61094713)
+
 [node name="Player" parent="." unique_id=539628790 instance=ExtResource("1_bswci")]
 position = Vector2(581, 676)
 
@@ -86,7 +90,3 @@ unique_name_in_owner = true
 
 [node name="Level1TransitionMusic" type="AudioStreamPlayer" parent="." unique_id=986859041]
 unique_name_in_owner = true
-
-[node name="Lake" parent="." unique_id=105327382 instance=ExtResource("9_e3sih")]
-position = Vector2(6711.0005, 1329)
-scale = Vector2(0.29672787, 0.61094713)

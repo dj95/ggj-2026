@@ -40,6 +40,8 @@ _data = {
 &"walk": SubResource("Animation_kdgjc")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_sglur"]
+
 [node name="Player" type="CharacterBody2D" unique_id=553831703]
 script = ExtResource("1_onrkg")
 
@@ -103,10 +105,10 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Quit"
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="." unique_id=2129312047]
-position = Vector2(-9.499998, -17.499992)
-scale = Vector2(4.333333, 5.21875)
-polygon = PackedVector2Array(7.5, -7.6000004, 7.5, -9.4, 2.5, -7.7, -7.5, -9.2, -7.5, -7.3999996, -7.8999996, -7, -9.5, -7, -9.5, -0.39999962, -10.9, 1, -12.5, 1, -12.5, 3, -13.5, 3, -13.5, 7.3999996, -11.5, 9.4, -11.5, 11.6, -7.5, 13.6, -7.5, 16, 3.6000004, 16, 9, 8, 10.5, 8, 10.5, -5.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=446107594]
+position = Vector2(-13.999999, 2)
+scale = Vector2(5.2624702, 6.5053864)
+shape = SubResource("CircleShape2D_sglur")
 
 [connection signal="pressed" from="PauseScreen/ColorRect/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PauseScreen/ColorRect/VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]

@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody2D
 
 # imports
@@ -8,6 +9,7 @@ const Season = preload("res://common/seasons.gd")
 @export var gravity = 40
 @export var jump_force = 800
 @export var glide_speed = 175
+@export var is_swimming = false
 
 # state variables
 var jump_count := 0
@@ -42,9 +44,26 @@ func _process(_delta: float) -> void:
 
 
 func _physics_process(_delta: float):
+	# dead
 	if self.global_position.y > 1000:
 		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
+	_jump_and_glide()
+
+	# movement
+	var horizontal_direction = Input.get_axis("move_left", "move_right")
+	velocity.x = speed * horizontal_direction
+
+	# flip animation and charactor when walking left and right
+	if velocity.x < 0:
+		$Sprite2D.flip_h = true
+	elif velocity.x > 0:
+		$Sprite2D.flip_h = false
+
+	move_and_slide()
+
+
+func _jump_and_glide():
 	if !is_on_floor():
 		_animated_sprite.stop()
 
@@ -63,11 +82,14 @@ func _physics_process(_delta: float):
 		if is_on_floor():
 			jump_count = 0
 
+		if is_swimming:
+			velocity.y = -jump_force
+			return
+
 		if jump_count == 0:
 			velocity.y = -jump_force
 			jump_count += 1
 		elif jump_count == 1:
-
 			# second jump
 			if current_season == "autumn":
 				velocity.y = -jump_force
@@ -79,18 +101,6 @@ func _physics_process(_delta: float):
 	# stop gliding on jump release
 	if Input.is_action_just_released("jump"):
 		is_gliding = false
-
-	# movement
-	var horizontal_direction = Input.get_axis("move_left", "move_right")
-	velocity.x = speed * horizontal_direction
-
-	# flip animation and charactor when walking left and right
-	if velocity.x < 0:
-		$Sprite2D.flip_h = true
-	elif velocity.x > 0:
-		$Sprite2D.flip_h = false
-
-	move_and_slide()
 
 
 func _season_changes(season):

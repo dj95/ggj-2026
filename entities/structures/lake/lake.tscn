@@ -7,14 +7,30 @@
 size = Vector2(6857, 2173.5)
 
 [node name="Lake" type="Node2D" unique_id=105327382]
-script = ExtResource("1_b8w2k")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=784601302]
 unique_name_in_owner = true
 texture = ExtResource("1_tsk6a")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Background" unique_id=1022144454]
+[node name="Water" type="Area2D" parent="Background" unique_id=569788617]
+position = Vector2(-293, -275)
+scale = Vector2(25.36876, 35.511253)
+gravity_point_center = Vector2(0, -1)
+gravity_direction = Vector2(0, -1)
+script = ExtResource("1_b8w2k")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/StaticBody2D" unique_id=426102653]
-position = Vector2(-1.5, 6.25)
+[node name="CollisionShapeWater" type="CollisionShape2D" parent="Background/Water" unique_id=426102653]
+position = Vector2(11.490511, 7.9200253)
+scale = Vector2(0.039418563, 0.02816009)
 shape = SubResource("RectangleShape2D_tsk6a")
+
+[node name="Ice" type="StaticBody2D" parent="Background" unique_id=1650735536]
+
+[node name="CollisionShapeIce" type="CollisionShape2D" parent="Background/Ice" unique_id=1960254712]
+position = Vector2(-1.5, 6.2500305)
+scale = Vector2(1, 1.0000001)
+shape = SubResource("RectangleShape2D_tsk6a")
+disabled = true
+
+[connection signal="body_entered" from="Background/Water" to="Background/Water" method="_on_body_entered"]
+[connection signal="body_exited" from="Background/Water" to="Background/Water" method="_on_body_exited"]
