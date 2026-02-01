@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://cv0yu4dqr6amg"]
+[gd_scene format=3 uid="uid://bneusn43e4ovw"]
 
-[ext_resource type="Script" uid="uid://uomwi01ptuya" path="res://scenes/main_menu/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Script" uid="uid://uomwi01ptuya" path="res://scenes/main_menu/main_menu.gd" id="1_ob46e"]
 [ext_resource type="AudioStream" uid="uid://76pf74krn4d" path="res://scenes/main_menu/sound/GGJ2-Menu-Loop.mp3" id="2_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://t2dp1w5wwoie" path="res://scenes/main_menu/art/Menu.jpg" id="2_ob46e"]
 
@@ -10,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_l6cm7")
+script = ExtResource("1_ob46e")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1390142387]
 position = Vector2(966.00006, 556.375)
