@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://cnwpbqyr1i4ws"]
+
+[ext_resource type="Texture2D" uid="uid://dqno8m2iv45o1" path="res://entities/animals/bird/art/BirdFly.png" id="1_7eh1h"]
+[ext_resource type="Script" uid="uid://dqr0wttoqi1ot" path="res://entities/animals/bird/bird.gd" id="1_dvpsh"]
+
+[sub_resource type="Animation" id="Animation_7eh1h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_dvpsh"]
+resource_name = "fly"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333333, 0.26666668, 0.4, 0.53333336, 0.6666667, 0.8, 0.93333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 1, 5, 4, 3, 6, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_psxnt"]
+_data = {
+&"RESET": SubResource("Animation_7eh1h"),
+&"fly": SubResource("Animation_dvpsh")
+}
+
+[node name="Bird" type="Node2D" unique_id=416196989]
+script = ExtResource("1_dvpsh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=832007210]
+texture = ExtResource("1_7eh1h")
+hframes = 8
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D" unique_id=1316349680]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/StaticBody2D" unique_id=1617584528]
+polygon = PackedVector2Array(-8, -1, -6, 2, -4, 4, 1, 4, 3, 4, 7, 3, 7, 0, 5, -2, 3, -2, 1, -1, 0, -2, -1, -3, -1, -4, -1, -5, -2, -5, -3, -5, -4, -4, -4, -2, -4, -1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1650822593]
+libraries/ = SubResource("AnimationLibrary_psxnt")
+speed_scale = 4.0

@@ -1,7 +1,7 @@
 class_name MainMenu
 extends Node
 
-const GAME = preload("res://scenes/level_1.tscn")
+const GAME = preload("res://scenes/level_1/level_1.tscn")
 
 @onready var clickPlayer = %ClickPlayer
 
