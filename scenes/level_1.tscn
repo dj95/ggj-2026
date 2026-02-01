@@ -32,6 +32,11 @@ scale = Vector2(0.44539726, 0.44539726)
 [node name="Tree1" parent="." unique_id=1909653477 instance=ExtResource("4_fcfvj")]
 position = Vector2(70.000015, 465.00006)
 scale = Vector2(0.15182222, 0.15182222)
+collision = true
+
+[node name="Tree2" parent="." unique_id=542245276 instance=ExtResource("4_fcfvj")]
+position = Vector2(1075, 453.00003)
+scale = Vector2(0.15182222, 0.15182222)
 
 [node name="Player" parent="." unique_id=539628790 instance=ExtResource("1_bswci")]
 position = Vector2(581, 676)
@@ -39,7 +44,10 @@ position = Vector2(581, 676)
 [node name="floor" parent="." unique_id=1049295274 instance=ExtResource("2_rus8k")]
 position = Vector2(7, 751)
 
-[node name="StaticBody2D" parent="." unique_id=1527918553 instance=ExtResource("2_rus8k")]
+[node name="floor2" parent="." unique_id=1527918553 instance=ExtResource("2_rus8k")]
+position = Vector2(-1154, 754)
+
+[node name="StaticBody2D" parent="." unique_id=1490927847 instance=ExtResource("2_rus8k")]
 position = Vector2(1167, 671)
 scale = Vector2(0.2, 1)
 
