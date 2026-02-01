@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cxngiy1fxey38"]
+
+[ext_resource type="Texture2D" uid="uid://dcxofkt2lhcqq" path="res://entities/structures/bush/art/bush4.png" id="1_ws0f0"]
+
+[node name="Bush4" type="Node2D" unique_id=538577809]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=205273971]
+position = Vector2(-2, 0)
+texture = ExtResource("1_ws0f0")

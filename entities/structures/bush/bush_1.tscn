@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dl7nygysrr2o2"]
 
-[ext_resource type="Texture2D" uid="uid://c2f3w2pa6mmfh" path="res://entities/structures/bush/art/busch2.png" id="1_kqw1w"]
+[ext_resource type="Texture2D" uid="uid://bmwsftjlpv42x" path="res://entities/structures/bush/art/bush1.png" id="1_phhv2"]
 
 [node name="Bush1" type="Node2D" unique_id=538577809]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=205273971]
-texture = ExtResource("1_kqw1w")
+texture = ExtResource("1_phhv2")
